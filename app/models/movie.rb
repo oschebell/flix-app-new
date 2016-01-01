@@ -1,4 +1,6 @@
 class Movie < ActiveRecord::Base
+  
+  has_many :reviews
 
   validates :title, :released_on, :duration, presence: true
 
@@ -14,6 +16,7 @@ class Movie < ActiveRecord::Base
 RATINGS = %w(G PG PG-13 R NC-17)
 
  validates :rating, inclusion: {in:RATINGS}
+
 
   def self.released
     where("released_on <= ?", Time.now).order("released_on desc")
