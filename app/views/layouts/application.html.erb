@@ -5,12 +5,22 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-</head>
+  </head>
+
 <body>
+
 
 <%= render "layouts/header" %>
 
+<nav>
+    <p>
+      <%= link_to 'Contact Us!', 'http://twitter.com/oschebella' %>
+    </p>
+  </nav>
+
+
 <div id="wrapper">
+
 <% if flash[:notice] %>
     <p class="flash notice">
       <%= flash[:notice] %>
