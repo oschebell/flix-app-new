@@ -17,6 +17,9 @@ RATINGS = %w(G PG PG-13 R NC-17)
 
  validates :rating, inclusion: {in:RATINGS}
 
+  def average_stars
+    reviews.average(:stars)
+  end
 
   def self.released
     where("released_on <= ?", Time.now).order("released_on desc")
@@ -37,4 +40,5 @@ RATINGS = %w(G PG PG-13 R NC-17)
   def flop?
     total_gross.blank? || total_gross < 50000000
   end
+
 end

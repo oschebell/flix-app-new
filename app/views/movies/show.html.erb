@@ -37,6 +37,11 @@
       <%= link_to 'Delete', @movie, 
                   class: 'button',
                   method: :delete, data: { confirm: 'Are you sure?' } %>
+
+    <h3>Average Review</h3>
+<p>
+  <%= format_average_stars(@movie) %>
+</p>
     </nav>
   </footer>
 </article>
